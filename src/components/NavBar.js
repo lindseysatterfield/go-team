@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">React</NavbarBrand>
+        <NavbarBrand href="/">Sports Roster</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -25,7 +25,7 @@ const NavBar = () => {
               <Link className="nav-link" to="/add-player">Add Player</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/Players">Players</Link>
+              <Link className="nav-link" to="/players">Players</Link>
             </NavItem>
           </Nav>
         </Collapse>
