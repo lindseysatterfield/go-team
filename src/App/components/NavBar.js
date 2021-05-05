@@ -25,7 +25,7 @@ const NavBar = () => {
               <Link className="nav-link" to="/add-player">Add Player</Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/team">Team</Link>
+              <Link className="nav-link" to="/Players">Players</Link>
             </NavItem>
           </Nav>
         </Collapse>
