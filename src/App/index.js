@@ -27,7 +27,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <NavBar />
+        <NavBar user={user} />
         <Routes />
       </Router>
     </div>
