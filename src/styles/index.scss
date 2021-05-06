@@ -4,3 +4,9 @@
 body {
   background-color: $favColor;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+}

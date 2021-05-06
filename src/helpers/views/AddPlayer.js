@@ -1,9 +1,10 @@
 import React from 'react';
+import PlayerForm from '../../PlayerForm';
 
 export default function Home() {
   return (
     <div>
-      <h1>Form goes here</h1>
+      <PlayerForm />
     </div>
   );
 }
