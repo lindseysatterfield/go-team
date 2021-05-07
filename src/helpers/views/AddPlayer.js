@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PlayerForm from '../../PlayerForm';
 
-export default function Home() {
+function AddPlayer({ user }) {
   return (
     <div>
-      <PlayerForm />
+      <PlayerForm user={user}/>
     </div>
   );
 }
+
+AddPlayer.propTypes = {
+  user: PropTypes.any
+};
+
+export default AddPlayer;

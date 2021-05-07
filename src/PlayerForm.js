@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { addPlayer } from './helpers/data/playerData';
 
-export default function PlayerForm() {
+const PlayerForm = () => {
   const [player, setPlayer] = useState({
     name: '',
     position: '',
-    imageUrl: ''
+    imageUrl: '',
+    uid: ''
   });
 
   const handleInputChange = (e) => {
@@ -14,13 +16,18 @@ export default function PlayerForm() {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addPlayer(player);
+  };
+
   return (
     <>
       <div className='player-form'>
         <form
-          id='addPlayerForm'
+          id='AddPlayerForm'
           autoComplete='off'
-          onSubmit={handleInputChange}
+          onSubmit={handleSubmit}
           >
           <h2>Player Form</h2>
           <label>Name:</label>
@@ -52,9 +59,11 @@ export default function PlayerForm() {
             onChange={handleInputChange}
           >
           </input>
-          <button className='mt-5' type='submit'>Submit</button>
+          <button className='mt-5' type='submit' onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </>
   );
-}
+};
+
+export default PlayerForm;
