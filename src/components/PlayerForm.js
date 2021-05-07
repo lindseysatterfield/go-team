@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { addPlayer } from './helpers/data/playerData';
+import PropTypes from 'prop-types';
+import { addPlayer } from '../helpers/data/playerData';
 
-const PlayerForm = () => {
+const PlayerForm = ({ user }) => {
   const [player, setPlayer] = useState({
     name: '',
     position: '',
     imageUrl: '',
-    uid: ''
+    uid: user.uid
   });
 
   const handleInputChange = (e) => {
@@ -64,6 +65,10 @@ const PlayerForm = () => {
       </div>
     </>
   );
+};
+
+PlayerForm.propTypes = {
+  user: PropTypes.any
 };
 
 export default PlayerForm;
