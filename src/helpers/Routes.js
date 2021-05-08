@@ -30,7 +30,7 @@ function Routes({ user, players, setPlayers }) {
         <PrivateRoute
           exact path='/add-player'
           user={user}
-          component={() => <AddPlayer user={user} setPlayers={setPlayers} />}
+          component={() => <AddPlayer user={user} players={players} setPlayers={setPlayers} />}
         />
       </Switch>
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { addPlayer } from '../helpers/data/playerData';
 
-const PlayerForm = ({ user, formTitle }) => {
+const PlayerForm = ({ user, formTitle, setPlayers }) => {
   const [player, setPlayer] = useState({
     name: '',
     position: '',
@@ -19,7 +19,7 @@ const PlayerForm = ({ user, formTitle }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPlayer(player);
+    addPlayer(player).then((playerArray) => setPlayers(playerArray));
   };
 
   return (
@@ -69,7 +69,8 @@ const PlayerForm = ({ user, formTitle }) => {
 
 PlayerForm.propTypes = {
   user: PropTypes.any,
-  formTitle: PropTypes.string.isRequired
+  formTitle: PropTypes.string.isRequired,
+  setPlayers: PropTypes.func
 };
 
 export default PlayerForm;

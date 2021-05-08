@@ -15,8 +15,8 @@ function PlayerCard({
 }) {
   const handleClick = () => {
     deletePlayer(firebaseKey).then((playerArray) => setPlayers(playerArray));
-    console.warn(setPlayers);
   };
+
   return (
     <Card body className="card">
       <CardImg top width="100%" className="player-img" src={imageUrl} alt="Image of Mighty Duck player" />
