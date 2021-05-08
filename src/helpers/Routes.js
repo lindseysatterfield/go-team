@@ -17,20 +17,30 @@ PrivateRoute.propTypes = {
   user: PropTypes.any
 };
 
-function Routes({ user }) {
+function Routes({ user, players, setPlayers }) {
   return (
     <div>
       <Switch>
         <Route exact path='/' component={Home} />
-        <PrivateRoute exact path='/players' user={user} component={() => <Players user={user}/>} />
-        <PrivateRoute exact path='/add-player' user={user} component={() => <AddPlayer user={user}/>} />
+        <PrivateRoute
+          exact path='/players'
+          user={user}
+          component={() => <Players user={user} players={players} setPlayers={setPlayers} />}
+        />
+        <PrivateRoute
+          exact path='/add-player'
+          user={user}
+          component={() => <AddPlayer user={user} setPlayers={setPlayers} />}
+        />
       </Switch>
     </div>
   );
 }
 
 Routes.propTypes = {
-  user: PropTypes.any
+  user: PropTypes.any,
+  players: PropTypes.array,
+  setPlayers: PropTypes.func
 };
 
 export default Routes;

@@ -2,11 +2,19 @@
 @import 'variables';
 
 body {
-  background-color: $favColor;
+  background-color: antiquewhite;
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 20em;
+}
+
+.card {
+  width: 30em;
+}
+
+.player-img {
+  width: 15em;
 }

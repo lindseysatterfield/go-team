@@ -8,6 +8,7 @@ import { getPlayers } from '../helpers/data/playerData';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authedUser) => {
@@ -18,9 +19,8 @@ function App() {
           uid: authedUser.uid,
           user: authedUser.email.split('@')[0]
         };
-        getPlayers(authedUser.uid).then((playersArray) => console.warn(playersArray));
+        getPlayers(authedUser.uid).then((response) => setPlayers(response));
         setUser(userInfoObject);
-        console.warn(userInfoObject);
       } else if (user || user === null) {
         setUser(false);
       }
@@ -31,7 +31,7 @@ function App() {
     <div className='App'>
       <Router>
         <NavBar user={user} />
-        <Routes user={user} />
+        <Routes user={user} players={players} setPlayers={setPlayers}/>
       </Router>
     </div>
   );

@@ -5,7 +5,7 @@ import PlayerForm from '../../components/PlayerForm';
 function AddPlayer({ user }) {
   return (
     <div>
-      <PlayerForm user={user}/>
+      <PlayerForm user={user} formTitle='Add a Mighty Duck' />
     </div>
   );
 }
