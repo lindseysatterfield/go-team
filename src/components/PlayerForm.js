@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { addPlayer } from '../helpers/data/playerData';
 
-const PlayerForm = ({ user }) => {
+const PlayerForm = ({ user, formTitle }) => {
   const [player, setPlayer] = useState({
     name: '',
     position: '',
@@ -30,7 +30,7 @@ const PlayerForm = ({ user }) => {
           autoComplete='off'
           onSubmit={handleSubmit}
           >
-          <h2>Player Form</h2>
+          <h2>{formTitle}</h2>
           <label>Name:</label>
           <input
             name='name'
@@ -68,7 +68,8 @@ const PlayerForm = ({ user }) => {
 };
 
 PlayerForm.propTypes = {
-  user: PropTypes.any
+  user: PropTypes.any,
+  formTitle: PropTypes.string.isRequired
 };
 
 export default PlayerForm;

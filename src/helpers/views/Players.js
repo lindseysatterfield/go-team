@@ -1,9 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import PlayerCard from '../../components/PlayerCard';
 
-export default function Players() {
+function Players({ players, user }) {
   return (
     <div>
-      <h1>Player page</h1>
+      {players.map((playerInfo) => (
+        <PlayerCard key={playerInfo.firebaseKey}
+        imageUrl={playerInfo.imageUrl}
+        name={playerInfo.name}
+        position={playerInfo.position}
+        user={user}
+        />
+      ))}
     </div>
   );
 }
+
+Players.propTypes = {
+  players: PropTypes.array,
+  user: PropTypes.any
+};
+
+export default Players;
