@@ -37,7 +37,9 @@ function PlayerCard({
         <CardSubtitle tag="h6" className="mb-2 text-muted">{position}</CardSubtitle>
         <div className="buttons">
           <Button color="danger" onClick={() => handleClick('delete')}>Delete</Button>
-          <Button color="info" onClick={() => handleClick('edit')}>Edit</Button>
+          <Button color="info" onClick={() => handleClick('edit')}>
+            {editing ? 'Close Form' : 'Edit Player' }
+          </Button>
           {editing && <PlayerForm
             formTitle='Edit Player'
             setPlayers={setPlayers}
