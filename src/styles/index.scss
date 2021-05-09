@@ -18,3 +18,8 @@ form {
 .player-img {
   width: 15em;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+};

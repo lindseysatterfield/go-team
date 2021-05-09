@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { addPlayer } from '../helpers/data/playerData';
 
-const PlayerForm = ({ user, formTitle, setPlayers }) => {
+const PlayerForm = ({
+  user,
+  formTitle,
+  setPlayers,
+  imageUrl,
+  name,
+  position,
+  firebaseKey
+}) => {
   const [player, setPlayer] = useState({
-    name: '',
-    position: '',
-    imageUrl: '',
-    uid: user.uid
+    name: name || '',
+    position: position || '',
+    imageUrl: imageUrl || '',
+    uid: user.uid || user.uid,
+    firebaseKey: firebaseKey || ''
   });
 
   const handleInputChange = (e) => {
@@ -19,7 +28,7 @@ const PlayerForm = ({ user, formTitle, setPlayers }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPlayer(player).then((playerArray) => setPlayers(playerArray));
+    addPlayer(player, user.uid).then((playerArray) => setPlayers(playerArray));
   };
 
   return (
@@ -70,7 +79,11 @@ const PlayerForm = ({ user, formTitle, setPlayers }) => {
 PlayerForm.propTypes = {
   user: PropTypes.any,
   formTitle: PropTypes.string.isRequired,
-  setPlayers: PropTypes.func
+  setPlayers: PropTypes.func,
+  firebaseKey: PropTypes.string,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  position: PropTypes.string,
 };
 
 export default PlayerForm;
