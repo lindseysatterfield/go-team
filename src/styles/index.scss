@@ -1,25 +1,82 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+$bg-img: url(../assets/background.jpeg);
+
+html, body { 
+  background: $bg-img no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 body {
-  background-color: antiquewhite;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+.home {
+  padding: 0 .5em;
+}
+
+.header-team {
+  font-size: 64px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 20em;
+  padding: .5em;
+  margin: 0 auto;
 }
 
-.card {
-  width: 30em;
+label {
+  margin: .5em 0;
+}
+
+.profile-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: .5em;
+}
+
+div.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+  margin: 0 auto;
+}
+
+#card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf0f5;
+  padding: 0;
+  border-radius: 2%;
 }
 
 .player-img {
-  width: 15em;
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2%;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
 };
+
+.card-btn {
+  width: 20em;
+}
+
+#card {
+  margin: 1em;
+  width: 400px;
+  border-radius: 2%;
+}
