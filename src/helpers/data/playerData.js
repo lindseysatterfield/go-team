@@ -32,4 +32,15 @@ const deletePlayer = (firebaseKey, uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getPlayers, addPlayer, deletePlayer };
+const updatePlayer = (playerObject, firebaseKey, uid) => new Promise((resolve, reject) => {
+  axios.put(`${dbUrl}/players/${firebaseKey}.json`, playerObject)
+    .then(() => getPlayers(uid).then(resolve))
+    .catch((error) => reject(error));
+});
+
+export {
+  getPlayers,
+  addPlayer,
+  deletePlayer,
+  updatePlayer
+};

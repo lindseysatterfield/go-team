@@ -22,7 +22,7 @@ function Players({ players, user, setPlayers }) {
 Players.propTypes = {
   players: PropTypes.array,
   user: PropTypes.any,
-  setPlayers: PropTypes.func
+  setPlayers: PropTypes.func.isRequired
 };
 
 export default Players;
