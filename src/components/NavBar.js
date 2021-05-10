@@ -19,18 +19,18 @@ const NavBar = ({ user }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className="nav-link" to="/add-player">Add Player</Link>
+        <Link className="nav-link text-light" to="/add-player">Add Player</Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/players">Players</Link>
+        <Link className="nav-link text-light" to="/players">Players</Link>
       </NavItem>
     </>
   );
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <Link className="navbar-brand" to="/">GO TEAM</Link>
+      <Navbar color="dark" light expand="md">
+        <Link className="navbar-brand text-light" to="/">GO TEAM</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>

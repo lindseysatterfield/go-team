@@ -16,8 +16,7 @@ function App() {
         const userInfoObject = {
           fullName: authedUser.displayName,
           profileImage: authedUser.photoURL,
-          uid: authedUser.uid,
-          user: authedUser.email.split('@')[0]
+          uid: authedUser.uid
         };
         getPlayers(authedUser.uid).then((response) => setPlayers(response));
         setUser(userInfoObject);

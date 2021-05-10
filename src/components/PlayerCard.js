@@ -30,16 +30,16 @@ function PlayerCard({
   };
 
   return (
-    <Card body className="card">
-      <CardImg top width="100%" className="player-img" src={imageUrl} alt="Image of Mighty Duck player" />
-      <CardBody>
-        <CardTitle tag="h5">{name}</CardTitle>
+    <Card className="card" id="card">
+      <CardBody id="card-body">
+        <CardImg top width="100%" className="player-img mt-4" src={imageUrl} alt="Image of player" />
+        <CardTitle tag="h5" className="mt-3">{name}</CardTitle>
         <CardSubtitle tag="h6" className="mb-2 text-muted">{position}</CardSubtitle>
-        <div className="buttons">
-          <Button color="danger" onClick={() => handleClick('delete')}>Delete</Button>
-          <Button color="info" onClick={() => handleClick('edit')}>
+        <div className="buttons mt-auto mb-4">
+          <Button className="card-btn mt-2" outline size="md" color="secondary" onClick={() => handleClick('edit')}>
             {editing ? 'Close Form' : 'Edit Player' }
           </Button>
+          <Button className="card-btn mt-2" outline size="md" color="danger" onClick={() => handleClick('delete')}>Delete</Button>
           {editing && <PlayerForm
             formTitle='Edit Player'
             setPlayers={setPlayers}

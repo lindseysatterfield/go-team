@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
 import { addPlayer, updatePlayer } from '../helpers/data/playerData';
 
 const PlayerForm = ({
@@ -74,7 +75,7 @@ const PlayerForm = ({
             onChange={handleInputChange}
           >
           </input>
-          <button className='mt-5' type='submit' onClick={handleSubmit}>Submit</button>
+          <Button className='mt-5' outline size="md" color="info" type='submit' onClick={handleSubmit}>Submit</Button>
         </form>
       </div>
     </>
