@@ -25,6 +25,9 @@ https://github.com/lindseysatterfield/sports-roster/projects/1
 - Sass
 - Webpack
 - Firebase
+
+#### ERD
+![](./src/assets/screenshots/erd.png)
 #### Screenshots
 ![](./src/assets/screenshots/landingPage.png)
 ![](./src/assets/screenshots/form.png)
